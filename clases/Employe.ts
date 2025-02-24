@@ -8,12 +8,20 @@ interface Product{
 
 class ProductManager{
     private products :Product[];
-    contructor(products:Product[]){
+    constructor(products:Product[]){
         this.products = products;
     }
-    addPrducts(product:Product):void{
+    addProduct(product:Product):void{
         if(product.price > 0)
             this.products.push(product)
+    }
+    listProducts():void{
+        this.products.forEach((elem)=>{
+            console.log(elem);
+        })
+    }
+    findProduct(idProduct:number | string): Product | undefined{
+       return  this.products.find((product) => product.id === idProduct);
     }
 }
 
