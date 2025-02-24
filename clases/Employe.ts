@@ -7,7 +7,7 @@ interface Product{
 }
 
 class ProductManager{
-    private products :Product[];
+    protected products :Product[];
     constructor(products:Product[]){
         this.products = products;
     }
@@ -25,3 +25,19 @@ class ProductManager{
     }
 }
 
+ class DiscounterProductManager extends ProductManager{
+
+    applyDiscount(discount:number,idProduct:number |string):number | string | undefined{
+        if(discount > 1 || discount <= 0){
+            return "Error el descuento debe ser menor a 1 y mayor que 0";
+        }
+        const product = this.products.find((product)=>product.id === idProduct);
+        if(!product){
+            return "producto no encontrado";
+        }
+        const newprice = product.price * (1-discount);
+        product.price = newprice;
+
+        return newprice
+    }
+ }
