@@ -1,4 +1,4 @@
-function sum(a, b) {
+/* function sum(a, b) {
     if (typeof a === 'string')
         a = parseInt(a, 10);
     if (typeof b === 'string')
@@ -6,4 +6,4 @@ function sum(a, b) {
     return a + b;
 }
 console.log(sum(1, 2));
-console.log(sum('1', '2'));
+console.log(sum('1', '2')); */
