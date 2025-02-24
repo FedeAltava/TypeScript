@@ -23,11 +23,17 @@ class ProductManager{
     findProduct(idProduct:number | string): Product | undefined{
        return  this.products.find((product) => product.id === idProduct);
     }
+    filterProductsByCategory(category:string):Product[]{
+        const filteredProducts = this.products.filter((product)=>{
+            return product.category === category;
+        })
+        return filteredProducts;
+    }
 }
 
  class DiscounterProductManager extends ProductManager{
 
-    applyDiscount(discount:number,idProduct:number |string):number | string | undefined{
+    applyDiscount(discount:number,idProduct:number |string): string{
         if(discount > 1 || discount <= 0){
             return "Error el descuento debe ser menor a 1 y mayor que 0";
         }
@@ -38,6 +44,9 @@ class ProductManager{
         const newprice = product.price * (1-discount);
         product.price = newprice;
 
-        return newprice
+        return `El nuevo precio es ${newprice}`;
     }
+
  }
+
+
