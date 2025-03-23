@@ -14,10 +14,16 @@
     const aliados:string[] = ['Mujer Maravilla','Acuaman','San', 'Flash'];
   
     //Enumeraciones
-    const fuerzaFlash = 5;
-    const fuerzaSuperman = 100;
-    const fuerzaBatman = 1;
-    const fuerzaAcuaman = 0;
+    enum fuerza{
+      acuaman = 0,
+      flash = 1,
+      batman = 5,
+      superman = 100
+    }
+    const fuerzaFlash:fuerza = fuerza.flash;
+    const fuerzaSuperman:fuerza = fuerza.superman;
+    const fuerzaBatman:fuerza = fuerza.batman;
+    const fuerzaAcuaman:fuerza = fuerza.superman;
   
     // Retorno de funciones
     function activar_batiseñal():string{
@@ -29,8 +35,8 @@
     }
   
     // Aserciones de Tipo
-    const poder: any = '100' as string;
-    const largoDelPoder:number = poder.length as number;
+    const poder: any = '100';
+    const largoDelPoder:number = (poder as string).length;
     console.log( largoDelPoder );
   
   
