@@ -28,5 +28,5 @@ const unirheroes = ( ...personas:string[] ):string => {
 const noHaceNada = ( n:number, f:string, t:boolean, k:[] ):void => {};
 
 // Crear el tipo de funcion que acepte la funcion "noHaceNada"
-let noHaceNadaTampoco;
+let noHaceNadaTampoco:Function;
 noHaceNadaTampoco = noHaceNada;
