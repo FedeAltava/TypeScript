@@ -1,16 +1,16 @@
 // Funciones Básicas
-function sumar( a, b ){
+function sumar( a:number, b:number ):number{
   return a + b;
 }
 
-const contar = ( heroes ) => {
+const contar = ( heroes:string ):number => {
   return heroes.length;
 }
-const superHeroes = ["Flash", "Arrow", "Superman", "Linterna Verde"];
-contar(superHeroes);
+const superHeroes:string[] = ["Flash", "Arrow", "Superman", "Linterna Verde"];
+contar(superHeroes[3]);
 
 //Parametros por defecto
-const llamarBatman = ( llamar ) => {
+const llamarBatman = ( llamar:boolean = true ):void => {
   if( llamar ){
     console.log("Batiseñal activada");
   }
@@ -19,14 +19,14 @@ const llamarBatman = ( llamar ) => {
 llamarBatman(true);
 
 // Rest?
-const unirheroes = ( personas ) => {
+const unirheroes = ( ...personas:string[] ):string => {
   return personas.join(", ");
 }
 
 
 // Tipo funcion
-const noHaceNada = ( numero, texto, booleano, arreglo )=> {}
+const noHaceNada = ( n:number, f:string, t:boolean, k:[] ):void => {};
 
 // Crear el tipo de funcion que acepte la funcion "noHaceNada"
 let noHaceNadaTampoco;
-noHaceNadaTampoco = noHaceNada
+noHaceNadaTampoco = noHaceNada;
